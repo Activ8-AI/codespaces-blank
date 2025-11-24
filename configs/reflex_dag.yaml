@@ -1,0 +1,7 @@
+reflexes:
+  industry_reflex:
+    listens_to: "maos.industry.signal"
+    conditions:
+      min_confidence: 0.75
+      min_urgency: 2
+    handler: "reflex_handlers.industry_reflex.handle"

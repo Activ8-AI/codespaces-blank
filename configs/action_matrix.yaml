@@ -1,0 +1,21 @@
+reflex_map:
+  maos.industry.signal: "industry_reflex"
+
+thresholds:
+  industry_reflex:
+    confidence_min: 0.75
+    urgency_min: 2
+    volatility_min_for_strategic: 0.5
+
+weights:
+  industry_reflex:
+    kpi_weight: 0.4
+    urgency_weight: 0.3
+    volatility_weight: 0.2
+    client_relevance_weight: 0.1
+
+execution_pipeline:
+  industry_reflex: "dispatch"
+
+portal_sync:
+  industry_reflex: "industry_radar"
