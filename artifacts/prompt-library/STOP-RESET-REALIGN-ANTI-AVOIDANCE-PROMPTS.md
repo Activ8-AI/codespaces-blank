@@ -1,5 +1,5 @@
 <!-- managed-by: activ8-ai-context-pack | pack-version: 1.1.0 -->
-<!-- source-sha: bfdd4b8 -->
+<!-- source-sha: 3fab2c5 -->
 # STOP-RESET-REALIGN Anti-Avoidance Prompts
 
 ## Canonical Prompt

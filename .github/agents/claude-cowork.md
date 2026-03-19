@@ -1,5 +1,5 @@
 <!-- managed-by: activ8-ai-context-pack | pack-version: 1.2.0 -->
-<!-- source-sha: bfdd4b8 -->
+<!-- source-sha: 3fab2c5 -->
 <!-- platform: claude-desktop | tier: T2 | version: 1.2.0 | policy: ai-agent-policy@wrapper | updated: 2026-03-18 -->
 
 # Claude Desktop / Cowork Agent Instructions — codespaces-blank

@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 // managed-by: activ8-ai-context-pack | pack-version: 1.2.0
-// source-sha: bfdd4b8
+// source-sha: 3fab2c5
 
 import fs from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { runSourceQueryLadder } from "./query-source-ladder.mjs";
 
-const REPO_ROOT = process.cwd();
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = path.resolve(__dirname, "..");
 const argv = process.argv.slice(2);
 
 function argValue(name) {
@@ -81,11 +83,12 @@ const sourceBootstrapResults = await Promise.all(
         nextStep: result.live_notion_confirmation,
       };
     } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : String(error);
       return {
         query,
         cacheHit: false,
         hits: 0,
-        nextStep: `source bootstrap failed: ${error.message}`,
+        nextStep: `source bootstrap failed: ${errorMessage}`,
       };
     }
   }),

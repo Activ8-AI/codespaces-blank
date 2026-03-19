@@ -1,11 +1,11 @@
 <!-- managed-by: activ8-ai-context-pack | pack-version: 1.2.0 -->
-<!-- source-sha: bfdd4b8 -->
+<!-- source-sha: 3fab2c5 -->
 <!-- purpose: Thin wrapper to bind this repo to the Activ8 AI Charter + central policy -->
 <!-- updated: 2026-03-18 -->
 
 # AI Agent Policy — codespaces-blank
 
-**You are operating under the Activ8 AI Operational Execution & Accountability Charter (Charter v1.5).**
+**You are operating under the Activ8 AI Operational Execution & Accountability Charter (Charter v1.6).**
 
 ## What this file does
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // managed-by: activ8-ai-context-pack | pack-version: 1.1.0
-// source-sha: bfdd4b8
+// source-sha: 3fab2c5
 
 import { mkdirSync, writeFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
@@ -12,7 +12,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = join(__dirname, "..");
 const OUTPUT_DIR = join(REPO_ROOT, "artifacts", "build-operationalization");
 const PROMPT_LIBRARY_DATABASE_ID =
-  process.env.PROMPT_LIBRARY_DATABASE_ID || "1ed5dd73-706e-8060-9175-cddeecb007a8";
+  process.env.NOTION_PROMPT_LIBRARY_DATABASE_ID
+  || process.env.PROMPT_LIBRARY_DATABASE_ID
+  || "1ed5dd73-706e-8060-9175-cddeecb007a8";
 
 const args = new Set(process.argv.slice(2));
 const dryRun = args.has("--dry-run");
@@ -63,7 +65,7 @@ async function verifyPromptRow() {
     return {
       name: "prompt-library-verify",
       ok: !withSync,
-      skipped: !withSync,
+      skipped: !withSync || !process.env.NOTION_API_TOKEN,
       detail: !withSync
         ? "verification skipped"
         : "NOTION_API_TOKEN missing for prompt library verification",
@@ -113,8 +115,33 @@ async function main() {
   const steps = [
     runScript("scripts/build-operationalization-check.mjs"),
     runScript("scripts/action-persistence-self-check.mjs"),
+      runScript("scripts/lint-alias-drift.mjs"),
     await verifyPromptRow(),
   ];
+
+  if (withSync && !dryRun) {
+    steps.push(runScript("scripts/sync-context-pack.mjs", ["--target", ".", "--strict"]));
+    steps.push(
+      runScript("scripts/sync-agent-instructions.mjs", [
+        "--fix",
+        "--push-notion",
+        "--emit-notion",
+      ])
+    );
+  } else {
+    steps.push({
+      name: "context-pack-self-sync",
+      ok: true,
+      skipped: true,
+      detail: dryRun ? "auto-update skipped in dry-run mode" : "auto-update requires --with-sync",
+    });
+    steps.push({
+      name: "agent-instruction-auto-sync",
+      ok: true,
+      skipped: true,
+      detail: dryRun ? "auto-update skipped in dry-run mode" : "auto-update requires --with-sync",
+    });
+  }
 
   const blockers = steps.filter((step) => !step.ok && !step.skipped);
   const status = blockers.length === 0 ? "GREEN" : "RED";

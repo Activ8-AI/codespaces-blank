@@ -1,5 +1,5 @@
 <!-- managed-by: activ8-ai-context-pack | pack-version: 1.2.0 -->
-<!-- source-sha: bfdd4b8 -->
+<!-- source-sha: 3fab2c5 -->
 <!-- updated: 2026-03-18 -->
 
 # Sources of Truth — codespaces-blank
@@ -14,7 +14,7 @@ When a governed decision, prompt, instruction, or artifact is in scope, verify i
 2. GitHub/local repo
 3. Local/runtime files
 
-No action begins without a plan, and no governed artifact should be treated as net-new until these surfaces have been checked.
+No action begins without a plan, and no governed artifact must be treated as net-new until these surfaces have been checked.
 
 ## Start here
 

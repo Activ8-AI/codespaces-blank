@@ -1,5 +1,5 @@
 <!-- managed-by: activ8-ai-context-pack | pack-version: 1.2.0 -->
-<!-- source-sha: bfdd4b8 -->
+<!-- source-sha: 3fab2c5 -->
 <!-- updated: 2026-03-18 -->
 
 # Audience + Surface Contract — codespaces-blank
@@ -53,7 +53,7 @@ Examples:
 
 ## Required Metadata
 
-Every governed surface should declare:
+Every governed surface must declare:
 
 - `Audience`
 - `Surface Type`
@@ -76,11 +76,11 @@ Every governed surface should declare:
 
 - Humans start with `docs/SOURCES-OF-TRUTH.md`.
 - Agents start with `docs/SOURCES-OF-TRUTH.md`, then resolve canonical sources and trace surfaces.
-- Machines should bind to stable IDs, manifests, registers, and database-backed indexes instead of prose alone.
+- Machines must bind to stable IDs, manifests, registers, and database-backed indexes instead of prose alone.
 
 ## Operationalization Rule
 
 - New or materially updated governed surfaces must be reflected in the repo routing map.
-- Agent instructions should reference this contract so behavior stays aligned across platforms.
-- Managed repos should validate this contract with `npm run operationalize:build`.
+- Agent instructions must reference this contract so behavior stays aligned across platforms.
+- Managed repos must validate this contract with `npm run operationalize:build`.
 
