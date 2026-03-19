@@ -1,5 +1,5 @@
-<!-- managed-by: activ8-context-pack | pack-version: 1.1.0 -->
-<!-- source-sha: 706ef6d -->
+<!-- managed-by: activ8-ai-context-pack | pack-version: 1.1.0 -->
+<!-- source-sha: bfdd4b8 -->
 # Prompt Library
 
 This repo carries the Activ8 managed prompt-library minimum contract.

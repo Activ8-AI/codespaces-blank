@@ -1,4 +1,5 @@
-// managed-by: activ8-context-pack | pack-version: 1.1.0
+// managed-by: activ8-ai-context-pack | pack-version: 1.1.0
+// source-sha: bfdd4b8
 export interface PersistedActionReceipt {
   schema_version: "action_persistence_v1";
   action_id: string;

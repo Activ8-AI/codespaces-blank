@@ -1,5 +1,5 @@
-<!-- managed-by: activ8-context-pack | pack-version: 1.2.0 -->
-<!-- source-sha: 706ef6d -->
+<!-- managed-by: activ8-ai-context-pack | pack-version: 1.2.0 -->
+<!-- source-sha: bfdd4b8 -->
 <!-- platform: genesis | tier: T2 | version: 1.2.0 | policy: ai-agent-policy@wrapper | updated: 2026-03-18 -->
 
 # Genesis Agent Instructions — codespaces-blank

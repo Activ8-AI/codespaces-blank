@@ -1,5 +1,5 @@
-<!-- managed-by: activ8-context-pack | pack-version: 1.2.0 -->
-<!-- source-sha: 706ef6d -->
+<!-- managed-by: activ8-ai-context-pack | pack-version: 1.2.0 -->
+<!-- source-sha: bfdd4b8 -->
 <!-- purpose: Thin wrapper to bind this repo to the Activ8 AI Charter + central policy -->
 <!-- updated: 2026-03-18 -->
 

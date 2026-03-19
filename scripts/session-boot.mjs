@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// managed-by: activ8-context-pack | pack-version: 1.2.0
+// managed-by: activ8-ai-context-pack | pack-version: 1.2.0
+// source-sha: bfdd4b8
 
 import fs from "node:fs/promises";
 import path from "node:path";
