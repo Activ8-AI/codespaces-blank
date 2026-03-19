@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // managed-by: activ8-ai-context-pack | pack-version: 1.2.0
-// source-sha: bff7ed8
+// source-sha: 3fab2c5
 /**
  * lint-alias-drift.mjs
  * Fail closed on stale MCP naming/alias drift in active repo surfaces.
@@ -40,24 +40,32 @@ const ACTIVE_PATH_EXACT = new Set([
   "package.json",
 ]);
 
+const EXCLUDED_SELF_REFERENTIAL_PATHS = new Set([
+  "scripts/lint-alias-drift.mjs",
+]);
+
+const ACTIV8_MCP_SHORTHAND = ["Activ8", "MCP"].join(" ");
+const STALE_LOCAL_SERVER_VARIANT = ["activ8", "unified", "mcp", "server"].join("-");
+const RETIRED_CLOUD_RUN_TOKEN = ["ypz", "tir4lba"].join("");
+
 const RULES = [
   {
     id: "A-NAMING-001",
-    pattern: /\bActiv8 MCP\b/g,
+    pattern: new RegExp(`\\b${ACTIV8_MCP_SHORTHAND}\\b`, "g"),
     message:
-      "Disallowed shorthand `Activ8 MCP` in active surfaces. Use `activ8-ai-unified-mcp-server` or an explicit system description.",
+      `Disallowed shorthand \`${ACTIV8_MCP_SHORTHAND}\` in active surfaces. Use \`activ8-ai-unified-mcp-server\` or an explicit system description.`,
   },
   {
     id: "A-NAMING-002",
-    pattern: /\bactiv8-unified-mcp-server\b/g,
+    pattern: new RegExp(`\\b${STALE_LOCAL_SERVER_VARIANT}\\b`, "g"),
     message:
-      "Disallowed stale local-server variant `activ8-unified-mcp-server`. Use `activ8-ai-unified-mcp-server`.",
+      `Disallowed stale local-server variant \`${STALE_LOCAL_SERVER_VARIANT}\`. Use \`activ8-ai-unified-mcp-server\`.`,
   },
   {
     id: "A-NAMING-003",
-    pattern: /ypztir4lba/g,
+    pattern: new RegExp(RETIRED_CLOUD_RUN_TOKEN, "g"),
     message:
-      "Disallowed retired Cloud Run revision URL token `ypztir4lba` in active surfaces.",
+      `Disallowed retired Cloud Run revision URL token \`${RETIRED_CLOUD_RUN_TOKEN}\` in active surfaces.`,
   },
 ];
 
@@ -78,6 +86,7 @@ function getTrackedFiles() {
 }
 
 function isActivePath(relPath) {
+  if (EXCLUDED_SELF_REFERENTIAL_PATHS.has(relPath)) return false;
   if (ACTIVE_PATH_EXACT.has(relPath)) return true;
   return ACTIVE_PATH_PREFIXES.some((prefix) => relPath.startsWith(prefix));
 }

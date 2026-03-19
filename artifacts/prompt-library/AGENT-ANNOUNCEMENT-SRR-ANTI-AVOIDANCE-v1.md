@@ -1,5 +1,5 @@
 <!-- managed-by: activ8-ai-context-pack | pack-version: 1.1.0 -->
-<!-- source-sha: bff7ed8 -->
+<!-- source-sha: 3fab2c5 -->
 # Agent Announcement — SRR Anti-Avoidance Prompt Packet
 
 The SRR anti-avoidance prompt packet is a required managed-repo prompt asset.

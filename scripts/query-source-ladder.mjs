@@ -1,14 +1,15 @@
 #!/usr/bin/env node
 // managed-by: activ8-ai-context-pack | pack-version: 1.2.0
-// source-sha: bff7ed8
+// source-sha: 3fab2c5
 
 import { createHash } from "node:crypto";
 import { promises as fs } from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
-const REPO_ROOT = process.cwd();
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = path.resolve(__dirname, "..");
 const HOME = os.homedir();
 const DEFAULT_LIMIT = 5;
 const DEFAULT_TTL_MINUTES = 60;

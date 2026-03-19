@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 // managed-by: activ8-ai-context-pack | pack-version: 1.2.0
-// source-sha: bff7ed8
+// source-sha: 3fab2c5
 
 import fs from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { runSourceQueryLadder } from "./query-source-ladder.mjs";
 
-const REPO_ROOT = process.cwd();
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = path.resolve(__dirname, "..");
 const argv = process.argv.slice(2);
 
 function argValue(name) {
