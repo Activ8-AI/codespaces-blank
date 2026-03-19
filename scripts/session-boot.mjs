@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // managed-by: activ8-ai-context-pack | pack-version: 1.2.0
-// source-sha: bfdd4b8
+// source-sha: bff7ed8
 
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -81,11 +81,12 @@ const sourceBootstrapResults = await Promise.all(
         nextStep: result.live_notion_confirmation,
       };
     } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : String(error);
       return {
         query,
         cacheHit: false,
         hits: 0,
-        nextStep: `source bootstrap failed: ${error.message}`,
+        nextStep: `source bootstrap failed: ${errorMessage}`,
       };
     }
   }),

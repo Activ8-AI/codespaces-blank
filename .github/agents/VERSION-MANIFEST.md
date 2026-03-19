@@ -1,5 +1,5 @@
 <!-- managed-by: activ8-ai-context-pack | pack-version: 1.1.0 -->
-<!-- source-sha: bfdd4b8 -->
+<!-- source-sha: bff7ed8 -->
 <!-- manifest-version: 1.1.0 | updated: 2026-03-18 -->
 
 # Agent Instruction File Version Manifest — codespaces-blank

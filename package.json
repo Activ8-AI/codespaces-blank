@@ -7,6 +7,9 @@
     "operationalize:repo": "node scripts/operationalize-buildwide.mjs",
     "action-persistence:check": "node scripts/action-persistence-self-check.mjs",
     "query:source-ladder": "node scripts/query-source-ladder.mjs",
-    "session:boot": "node scripts/session-boot.mjs"
+    "session:boot": "node scripts/session-boot.mjs",
+    "lint:aliases": "node scripts/lint-alias-drift.mjs",
+    "context:sync:self": "node scripts/sync-context-pack.mjs --target . --strict",
+    "agents:sync:auto": "node scripts/sync-agent-instructions.mjs --fix --push-notion --emit-notion"
   }
 }
