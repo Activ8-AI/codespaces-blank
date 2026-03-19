@@ -1,0 +1,12 @@
+{
+  "name": "codespaces-blank",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "operationalize:build": "node scripts/build-operationalization-check.mjs",
+    "operationalize:repo": "node scripts/operationalize-buildwide.mjs",
+    "action-persistence:check": "node scripts/action-persistence-self-check.mjs",
+    "query:source-ladder": "node scripts/query-source-ladder.mjs",
+    "session:boot": "node scripts/session-boot.mjs"
+  }
+}

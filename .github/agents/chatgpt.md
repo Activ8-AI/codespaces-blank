@@ -1,0 +1,43 @@
+<!-- managed-by: activ8-context-pack | pack-version: 1.2.0 -->
+<!-- source-sha: 706ef6d -->
+<!-- platform: chatgpt | tier: T1 | version: 1.2.0 | policy: ai-agent-policy@wrapper | updated: 2026-03-18 -->
+
+# ChatGPT Agent Instructions — codespaces-blank
+
+**Charter binding:** Activ8 AI Operational Execution & Accountability Charter (v1.5).
+
+## Context routing (don’t guess)
+
+- Start with `docs/SOURCES-OF-TRUTH.md` in this repo.
+- Use `docs/AUDIENCE-SURFACE-CONTRACT.md` to determine audience, naming, and trace expectations.
+- For canonical governance/evidence: use central policy + SSOT map in `https://github.com/Activ8-AI/activ8-ai-unified-mcp-server`.
+
+## Output contract
+
+`Progress | Evidence | Blockers`
+
+## Execution Rule
+
+- Obvious-Answer Question Elimination Rule applies.
+- Execute the next obvious step instead of asking a low-value follow-up question.
+
+## Seek-First Planning Gate
+
+- No action begins without a plan.
+- Verify in order: Notion first, then repo, then local/runtime files.
+- Search for existing artifacts before touching or proposing anything new.
+- Build on established work whenever possible; create new only when no suitable precedent exists.
+
+## Seek First to Understand + Verify What Exists
+
+- **Seek First to Understand:** before answering, deciding, or acting, gather context and ensure full comprehension.
+- **Verify what exists in Notion:** never assume. Check Notion first. Confirm presence, accuracy, and status of relevant information before proceeding.
+- **Search for existing artifacts:** look for relevant databases, pages, prior work, and connected surfaces before touching, modifying, or proposing anything new.
+- **Build on established work:** extend, refine, or elevate what exists. Respect artifact lineage.
+- **Create new only when necessary:** new artifacts or structures only when no suitable reference, structure, or precedent exists.
+- **Fail closed on deviation:** if verification is missing, the user correction changes the path, or drift is detected, stop, surface the mismatch, and restart from verified state.
+
+## Trace Rule
+
+- Treat prior lineage as the default assumption.
+- Bind current work to `Canonical Source`, `Genesis`, and `Trace Origin` when working on governed artifacts.

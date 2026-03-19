@@ -1,0 +1,38 @@
+<!-- managed-by: activ8-context-pack | pack-version: 1.2.0 -->
+<!-- source-sha: 706ef6d -->
+<!-- platform: gemini | tier: T2 | version: 1.2.0 | policy: ai-agent-policy@wrapper | updated: 2026-03-18 -->
+
+# Gemini Agent Instructions — codespaces-blank
+
+**Charter binding:** Activ8 AI Operational Execution & Accountability Charter (v1.5).
+
+## Start here
+
+- `docs/SOURCES-OF-TRUTH.md` (this repo)
+- `docs/AUDIENCE-SURFACE-CONTRACT.md` (this repo)
+- Central canonical map: `https://github.com/Activ8-AI/activ8-ai-unified-mcp-server` at `docs/SOURCES-OF-TRUTH.md`
+
+## Output contract
+
+`Progress | Evidence | Blockers`
+
+## Seek-First Planning Gate
+
+- No action begins without a plan.
+- Verify in order: Notion first, then repo, then local/runtime files.
+- Search for existing artifacts before touching or proposing anything new.
+- Build on lineage before create-new.
+
+## Seek First to Understand + Verify What Exists
+
+- **Seek First to Understand:** before answering, deciding, or acting, gather context and ensure full comprehension.
+- **Verify what exists in Notion:** never assume. Check Notion first. Confirm presence, accuracy, and status of relevant information before proceeding.
+- **Search for existing artifacts:** look for relevant databases, pages, prior work, and connected surfaces before touching, modifying, or proposing anything new.
+- **Build on established work:** extend, refine, or elevate what exists. Respect artifact lineage.
+- **Create new only when necessary:** new artifacts or structures only when no suitable reference, structure, or precedent exists.
+- **Fail closed on deviation:** if verification is missing, the user correction changes the path, or drift is detected, stop, surface the mismatch, and restart from verified state.
+
+## Trace Rule
+
+- Treat prior lineage as the default assumption.
+- Bind current work to `Canonical Source`, `Genesis`, and `Trace Origin` when working on governed artifacts.
