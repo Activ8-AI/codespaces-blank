@@ -141,12 +141,16 @@ jobs:
         with:
           name: action-persistence
           path: artifacts/action-persistence/*
-          if-no-files-found: error
+          if-no-files-found: warn
 
       - name: Publish build operationalization summary
         if: always()
         run: |
           summary_failed=0
+          is_pull_request="false"
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            is_pull_request="true"
+          fi
           echo "## Build Operationalization" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           if [ -f artifacts/build-operationalization/latest__build_operationalization.md ]; then
@@ -159,6 +163,8 @@ jobs:
           echo "" >> "$GITHUB_STEP_SUMMARY"
           if [ -f artifacts/build-operationalization/latest__buildwide_operationalization.md ]; then
             cat artifacts/build-operationalization/latest__buildwide_operationalization.md >> "$GITHUB_STEP_SUMMARY"
+          elif [ "$is_pull_request" = "true" ]; then
+            echo "- Buildwide operationalization artifact not expected on pull_request events." >> "$GITHUB_STEP_SUMMARY"
           else
             echo "- No buildwide operationalization artifact was generated." >> "$GITHUB_STEP_SUMMARY"
             summary_failed=1
@@ -168,6 +174,8 @@ jobs:
           echo "" >> "$GITHUB_STEP_SUMMARY"
           if [ -f artifacts/action-persistence/latest/latest__action-persistence-self-check.json ]; then
             echo "- action persistence self-check receipt present" >> "$GITHUB_STEP_SUMMARY"
+          elif [ "$is_pull_request" = "true" ]; then
+            echo "- action persistence self-check receipt not expected on pull_request events." >> "$GITHUB_STEP_SUMMARY"
           else
             echo "- action persistence self-check receipt missing" >> "$GITHUB_STEP_SUMMARY"
             summary_failed=1
