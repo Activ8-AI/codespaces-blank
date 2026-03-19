@@ -62,7 +62,7 @@ async function verifyPromptRow() {
     return {
       name: "prompt-library-verify",
       ok: !withSync,
-      skipped: !withSync || !process.env.NOTION_API_TOKEN,
+      skipped: !withSync,
       detail: !withSync
         ? "verification skipped"
         : "NOTION_API_TOKEN missing for prompt library verification",
